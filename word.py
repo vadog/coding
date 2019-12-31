@@ -1,18 +1,21 @@
-print ("please type a word")
+print ("please type a phrase")
 word = input()
 x=0
 y=0
-z=0
+z = False
+w = []
 while x < len(word):
-    print (word[x])
-    if word[x]  in "abcdefghijklmnopqrstuvwxyz":
-        if z == 0:
+   
+    if word[x]  in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXXYZ":
+        if not z:
             y +=1
-            z +=1
-    if word[x] not in "abcdefghijklmnopqrstuvwxyz":
-        z = 0
+            z = True
+    if word[x] not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXXYZ":
+        z = False
    
-   
+    w.append(word[x])
+
     x += 1
     
 print ("words: ",y )
+print ("".join(w))
