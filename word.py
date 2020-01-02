@@ -4,6 +4,7 @@ x=0
 y=0
 z = False
 w = []
+l= []
 while x < len(word):
    
     if word[x]  in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXXYZ":
@@ -12,10 +13,13 @@ while x < len(word):
             z = True
     if word[x] not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXXYZ":
         z = False
+        p= ("".join(l))
+        w.append(p)
+        l= []
    
-    w.append(word[x])
+    l.append(word[x])
 
     x += 1
     
 print ("words: ",y )
-print ("".join(w))
+print (",".join(w))
