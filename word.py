@@ -20,6 +20,9 @@ while x < len(word):
     l.append(word[x])
 
     x += 1
+
+p = ("".join(l))
+w.append(p)
     
 print ("words: ",y )
 print (",".join(w))
