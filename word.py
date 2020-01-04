@@ -53,3 +53,22 @@ fwords = (",".join(w))
 
 print ("words: ",y )
 print (fwords)
+print (w)
+
+
+
+m =0
+r = 0
+checker =  0
+
+while m < len(w):
+    currentword = w[m]
+    
+    while r < len(w):
+        if currentword == w[r]:
+            checker += 1
+        r += 1
+    print (currentword,checker)
+    m +=1
+    checker = 0
+    r = 0
