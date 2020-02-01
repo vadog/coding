@@ -9,18 +9,22 @@ pygame.display.set_caption("game")
 prgrmrun = True
 gamerun = True
 
+bulletsound = pygame.mixer.Sound('hit.wav')
 
 cx = random.randrange(100,900) 
 cy = random.randrange(100,900) 
 
 score = 0
 
+
 font = pygame.font.SysFont("comicsans", 30, True)
+
 font1 = pygame.font.SysFont("comicsans", 80, True)
 
 currenttime = 0
 intercounter1 = 0
-time = 5
+time = 60
+
 
 while prgrmrun:
     win.fill((0,0,0))
@@ -53,6 +57,7 @@ while prgrmrun:
         if countdown > 0:
             if x > cx - 60 and x < cx + 60:
                 if y > cy -60 and y < cy + 60:
+                    bulletsound.play()
                     cx = random.randrange(100,900) 
                     cy = random.randrange(100,900) 
                     score += 1
