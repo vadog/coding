@@ -22,12 +22,11 @@ class sp1ke():
         self.width = width
         self.height = height 
         self.color =  color
-        self.vel = 5
+        self.vel = 10
 
 
     def draw(self,win):
         pygame.draw.rect(win, self.color, (self.x,self.y, self.width, self.height))
-
 
 
 
@@ -41,6 +40,11 @@ while run:
 
     pygame.draw.rect(win,(0,0,255),(x,y,50,50))
 
+    pygame.draw.line(win,(50,200,0),(550,350),(-10,350))
+
+   
+   
+   
     if not isjump:     
         if keys[pygame.K_UP]:   
             isjump = True 
@@ -55,10 +59,10 @@ while run:
 
         else:
             isjump = False
-            jumpcount = 10
+            jumpcount = 10 
 
     for spike in spikes:
-        if spike.x > -50:
+        if spike.x > -50: 
             spike.x -= spike.vel
         else:
             spikes.pop(spikes.index(spike))
@@ -66,8 +70,15 @@ while run:
 
     
     if spikeclear:
-        spikes.append(sp1ke ( 400,320,30,30,(0,0,255) ))
+        spikes.append(sp1ke ( 550,320,30,30,(50,200,0) ))
         spikeclear = False
+    
+
+    for spike in spikes:
+        if spike.x < x and spike.x > x - 50 :
+            if spike.y < y + 50 :
+            
+                print ("ok")
 
 
     for spike in spikes:
