@@ -1,0 +1,3 @@
+hablar
+to speak
+hablo,hablas,habla,hablamos,hablan
